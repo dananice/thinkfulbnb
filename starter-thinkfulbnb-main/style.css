@@ -90,6 +90,8 @@ header nav ul li a:hover {
 form {
   border: 2px solid #ff385c;
   padding: 10px;
+  
+
 
 }
 
@@ -112,7 +114,7 @@ form input {
 
 form button {
   background-color: #ff385c;
-  border: none;
+  border: medium;
   color: #fff;
   font-size: 50px;
   padding: 30px;
@@ -135,10 +137,20 @@ footer p {
 }
 
 /* -------  Media Query ------- */
-@media all and (min-width: 480px) {
+@media all and (min-width: 480px), screen and (orientation: landscape) {
   
   .group {
     display: flex;
     flex-direction: row;
   }
+ /* Users cannot hover on mobile devices, so that is why you
+     implement this behavior only for larger screens. */
+ 
+     header nav ul li a:hover {
+      /* Targets the change when a user holds the pointer over the anchor tag 
+       (link) within the list items within the unordered list that 
+       is within the navigation that is within the header. */
+    color: #bdbdbd;   
+
+}
 }
