@@ -112,13 +112,11 @@ form input {
   width: 180px;
 }
 
-form button {
+form input[type="button"] {
   background-color: #ff385c;
   border: medium;
   color: #fff;
-  font-size: 50px;
-  padding: 30px;
-  width: 100%;
+
   display:inline-block;
   
   /* vertical-align: top;*/
@@ -137,12 +135,23 @@ footer p {
 }
 
 /* -------  Media Query ------- */
-@media all and (min-width: 480px), screen and (orientation: landscape) {
+@media all and (min-width: 480px) {
   
   .group {
     display: flex;
     flex-direction: row;
   }
+
+  .group img{
+    height: 150px;
+    margin: 5px;
+  }
+
+  .group p{
+    margin:5px;
+  }
+
+  
  /* Users cannot hover on mobile devices, so that is why you
      implement this behavior only for larger screens. */
  
