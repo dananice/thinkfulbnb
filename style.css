@@ -2,6 +2,7 @@
 
 body {
   font-family: "Lato", sans-serif;
+  
 }
 
 h2 {
@@ -9,13 +10,9 @@ h2 {
   font-weight: 400;
   margin: 0 10px 10px 10px;
   text-align: center;
-  display: flex;
-  flex-direction: column;
 }
 
 h3 {
-  display: flex;
-  flex-direction: column;
   font-size: 18px;
   font-weight: 500;
 }
@@ -42,7 +39,7 @@ main img {
 
 .group {
   display: flex;
- flex-direction: column;
+  flex-direction: column;
 }
 
 .item {
@@ -51,9 +48,11 @@ main img {
 }
 
 .item-double {
-  display:flex;
-  flex-direction: column;
-  
+  flex: 2;
+}
+.item-host{
+  flex: 1;
+  margin: 10px;
 }
 
 /* -------  Navigation ------- */
@@ -70,11 +69,15 @@ header {
   color: #fff;
 }
 
+header nav ul{
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
 header nav ul li {
-  display: inline-flex;
   list-style-type: none;
-  vertical-align: center;
-  
 }
 
 header nav ul li a {
@@ -92,31 +95,39 @@ header nav ul li a:hover {
 form {
   border: 2px solid #ff385c;
   padding: 10px;
+}
+form div{
+  display: flex;
+  justify-content: space-between;
+}
 
+.group-form{
+  display: flex;
+  flex-direction: column;
 }
 
 form label {
-  display: inline-block;
-  width: 100%;
-  text-align: left;
   font-weight: bold;
-  
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: inline-block;
+  width: 100px;
 }
 
 form select,
-
 form input {
-  
   margin-bottom: 20px;
   width: 180px;
 }
 
-form input[type="button"] {
+form button {
   background-color: #ff385c;
-  border: medium;
+  border: none;
   color: #fff;
-  display:inline-block;
-  vertical-align: center;
+  font-size: 24px;
+  padding: 15px;
+  width: 100%;
+  margin-top: 5px;
 }
 
 /* -------  Footer ------- */
@@ -132,79 +143,66 @@ footer p {
 }
 
 /* -------  Media Query ------- */
-@media all and (min-width: 480px) and (orientation: landscape) {
-  
-  
-
-  .logo {
-    font-family: "Pangolin", cursive;
-    font-size: 72px;
-    color: #fff;
-    text-align: left;
+@media all and (min-width: 480px){
+body{
+    display: grid;
   }
-
-  header nav ul li {
-    display: inline-flex;
-    text-align: right;
-}
-  
-  .group {
-    display: flex;
+.group {
     flex-direction: row;
   }
-
-  .group img{
-    height: 150px;
-    margin: 5px;
-    padding-right: 5px;
+header{
+    display: flex; 
+}
+header nav{
+  flex: 1;
+  margin-top: 5px;
+}
+header nav ul{
+  justify-content: right;
+}
+.item-double{
+  margin: 10px;
+}
+.item-host{
+  margin: auto;
+  padding: 10px;
+}
+form{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.group-form{
+  flex-wrap:wrap;
+  flex-direction: row;
+}
+form div{
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
   }
-
-  .group p{
-    margin: 5px;
-  } 
-
-  .group-ideas img {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-row: auto auto;
-  grid-column-gap: 20px;
-  grid-row-gap: 20px;
-  margin: 20px auto;
-  width: 40%;
-  height: 40%;
-  background-color:#fff;
-
+ form button{
+   flex: 1;
   }
+}
 
-
-  /*.group-ideas img{
-    height: 150px;
-    margin: 5px;
-    padding-right: 5px;
-  }*/
-
-  .container {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    justify-content: space-between;
-    vertical-align: center;
-    width: 50%;
+@media all and (max-width: 370px){
+  .logo{
+    font-size: 60px;
   }
+}
 
-  .container img{
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    align-content: ;
+@media all and (max-width: 320px){
+  .logo{
+    font-size: 50px;
+  }
+}
+
+@media all and (max-width: 310px){
+  form select, form input{
+      width: 130px;
     }
-    
-  .item {
-    width: 48%;
-    height: 100px;
-    margin-bottom: 2%;
-    vertical-align: middle;
-  }
+}
   
 
 
